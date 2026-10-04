@@ -354,8 +354,7 @@ name — a factory preset cannot be renamed where it lies.
 Off as it comes. Set `SESSION_GRID = True` in `keylab_config.py` and restart
 Live, and pads 1-12 become a 4x3 window onto Session View: four tracks across,
 three scenes up, starting at the first track and the first scene. Live draws
-its own highlight rectangle around the slots the pads address. Pads 1-4 are
-the first scene, 5-8 the second and 9-12 the third.
+its own highlight rectangle around the slots the pads address.
 
 **Read this before you switch it on.** The window starts on the same tracks the
 screen buttons arm, and an empty slot on an armed track is record-ready.
