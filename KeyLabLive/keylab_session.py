@@ -36,8 +36,6 @@
 #   Pad 9   Pad 10  Pad 11  Pad 12      scene 3
 #   Track 1 Track 2 Track 3 Track 4
 #
-# To put scene 1 on pads 9-12 instead, reverse _SCENE_ROWS below.
-#
 # STATE MACHINE
 #   Mirrors _Framework.ClipSlotComponent by hand: triggered beats playing
 #   beats the clip's own colour (dimmed) beats empty. Reproduced here rather than
