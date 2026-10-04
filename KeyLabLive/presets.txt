@@ -1,0 +1,31 @@
+# Written by KeyLabLive - but your edits are kept.
+#
+# This list is the 'Presets' Collection in Live's browser, and it is the
+# same list on all four tracks - a track becomes whatever you load
+# into it, so any preset can go anywhere.
+#
+# Tag a preset with that Collection, press Cycle, and it appears here.
+# Remove the tag and the line moves down to the remembered block at
+# the bottom; tag it again and it comes back with its chapter intact.
+#
+# FORMAT   Preset name, Chapter
+#
+# The preset name is its name in Live's browser. Leave it alone - it is
+# how the preset is found. Long names are cut to 12 characters on the
+# screen button, but the list itself shows them whole.
+#
+# The chapter is yours, and optional. Presets with the same chapter are
+# shown together, and Tap and Metro step between chapters while a list
+# is open. Chapters appear in the order they first appear in this file.
+# Give no preset a chapter and there are no chapters at all - one flat
+# list, exactly as before, and Tap and Metro do nothing.
+#
+# You may reorder the lines, and the order sticks. Newly tagged presets
+# land at the end with no chapter, so pads 1-12 never shuffle under
+# your fingers.
+#
+# This is not the only list. presets-manual.txt is yours alone - this
+# script never writes to it - and its presets come FIRST on screen,
+# without being tagged at all. Put a preset there if you want it on the
+# list permanently, here if you want to tag it in and out.
+

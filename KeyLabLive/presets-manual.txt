@@ -1,0 +1,231 @@
+# KeyLabLive - the hand-written preset list.
+#
+# THIS FILE IS YOURS. The script reads it and never writes to it, so nothing
+# here can be moved, reordered or deleted by anything but you.
+#
+# FORMAT   Preset name, Chapter
+#
+# The preset name is its name in Live's browser. Nothing has to be tagged:
+# these are looked up in the browser at large - see PRESET_SEARCH_ROOTS in
+# keylab_config.py. The chapter is optional and is yours; Tap and Metro step
+# between chapters while a list is open.
+#
+# These presets come FIRST on screen, ahead of the ones you tag with the
+# Collection. Chapters are shared between the two lists: "Racks" here and
+# "Racks" in presets.txt is one chapter.
+#
+# If a line does not work, the name is spelled differently in your browser.
+# Live's log says which names were not found. Fix the line and press Cycle.
+#
+# ---------------------------------------------------------------------------
+# WHAT IS BELOW is a starting point, not a recommendation: five chapters, and
+# not every one exists in every edition of Live. Drift is in all of them;
+# Analog and Electric need Standard or Suite; Operator needs Suite. Live
+# Standard also has fewer Packs than Suite, so some Racks lines may not exist
+# on your machine. Delete the lines that stay quiet, and cut this file down
+# to what you actually play; a list you scroll through is worse than a short
+# one.
+# ---------------------------------------------------------------------------
+
+
+Grand Piano, Racks
+Ac Piano Upright, Racks
+Childhood Home Piano, Racks
+E-Piano Classic, Racks
+E-Piano Roads, Racks
+E-Piano Rhodish, Racks
+E-Piano Wurli, Racks
+E-Piano Moody, Racks
+E-Piano Light, Racks
+E-Piano Old School, Racks
+E-Piano Straight, Racks
+E-Piano Detuned, Racks
+FM Piano Classic, Racks
+FM Piano Bright Tines, Racks
+Organ Bandstand, Racks
+Organ Dynamic, Racks
+Organ Plush, Racks
+Organ Funky, Racks
+Organ Rough, Racks
+Organ Analog, Racks
+Organ Transistor Series, Racks
+Organ LoFi, Racks
+Harmonium Synth, Racks
+Clav Variations, Racks
+Clav Anvil, Racks
+Harpsichord, Racks
+Ac Strings Orch, Racks
+String Machine, Racks
+Basic Jun Strings, Racks
+M Tron Strings, Racks
+Synthetic Strings, Racks
+Evangelis Strings, Racks
+Horns Mellow, Racks
+Basic Silk Horns, Racks
+Ac Flugelhorn, Racks
+Soft Stereo Brass, Racks
+Vibraphone, Racks
+Marimba Concert, Racks
+Celeste, Racks
+Music Box, Racks
+
+E-Piano MKI Simple, Electric
+E-Piano MKI Mellow, Electric
+E-Piano MKI Dirty, Electric
+E-Piano MKII Bright, Electric
+E-Piano MKII Hard, Electric
+E-Piano MKII Hollow, Electric
+E-Piano MKII Old, Electric
+E-Piano Short Soft, Electric
+E-Piano Short Sharp, Electric
+Wurli Classic Piano, Electric
+Wurli Soft Piano, Electric
+Wurli Hollow Piano, Electric
+Wurli Short Piano, Electric
+Wurli Marimba Piano, Electric
+Organ Soft, Electric
+Organ Softer, Electric
+Vibes Soft, Electric
+
+Synth Piano, Drift
+Transistor Reeds, Drift
+Paddles Out, Drift
+Bellatine, Drift
+La String Machine, Drift
+Gentle Sixty, Drift
+80s Tape, Drift
+Stereo Saw, Drift
+Atlas Keys, Drift
+Retro Bell Keys, Drift
+Keynell, Drift
+Rectangular Bliss, Drift
+Beating Vibraphone, Drift
+Morning Chorus Pad, Drift
+Light Frost, Drift
+Bloom Pad, Drift
+Wave Pad, Drift
+Foglie Pad, Drift
+Star Dust Strings, Drift
+Slow Roll Strings, Drift
+
+Strings Detuned Pad, Analog
+Glass Low Strings Pad, Analog
+Glass High Strings Pad, Analog
+Thick Chord Pad, Analog
+Fifth Pad, Analog
+Charry Pad, Analog
+Accordion Unisono Pad, Analog
+Soft Morning Keys, Analog
+Saw Elegant Thick Keys, Analog
+Tremolo Tines, Analog
+E-Piano Muted Pure, Analog
+Organ Vibrato, Analog
+Organ Percussive, Analog
+Organ Octaves Slow, Analog
+Organ Church Slow, Analog
+Synth Organ Long Release, Analog
+Horn2 Hollow Brass, Analog
+Mellow Notch Brass, Analog
+80s VCO Brass, Analog
+Saw Pure Brass, Analog
+
+Celesta Sustained, Operator
+Clav Filtered, Operator
+FM Harpsichord, Operator
+FM Piano Bright, Operator
+FM Piano Classic, Operator
+FM Piano Decay, Operator
+FM Piano Filtered, Operator
+FM Piano Rubber, Operator
+FM Piano Simple, Operator
+Nasal Tines, Operator
+Organ Basic, Operator
+Organ Clicky, Operator
+Organ Formant, Operator
+Organ Plucky, Operator
+Organ Stereo, Operator
+Buzz Release Keys, Operator
+Chord FM Keys, Operator
+Chord Mod Keys 1, Operator
+Chord Mod Keys 2, Operator
+Dynamic Pitch Keys, Operator
+Nasal Chorus Keys, Operator
+Nebulae Keys, Operator
+Plucked Keys, Operator
+Recorder Keys, Operator
+Tremolo Synth Piano, Operator
+Warm Chime Keys, Operator
+5ths Detuned Pad, Operator
+5ths Glass Motion Pad, Operator
+Analog Slow Sweep Pad, Operator
+Bell String Detuned Pad, Operator
+Bright Filterless Sweep Pad, Operator
+Glass Thin Pad, Operator
+Glass Thin Pure Pad, Operator
+Glass Vibrato Pad, Operator
+Muted Chorus Pad, Operator
+Muted Soft Shimmer Pad, Operator
+Orchestral Sweep Pad, Operator
+Resonant Sweep Pad, Operator
+Slow Sweep Pad, Operator
+Still Sky Pad, Operator
+Strings 5ths Pad, Operator
+Strings Basis Pad, Operator
+Strings Vibrato Pad, Operator
+Thick Organ Pad, Operator
+Tine Pad, Operator
+Vocal Vowel Slow Sweep Pad, Operator
+Bells Classic Basic, Operator
+Bells Classic Bright, Operator
+Bells Damped, Operator
+Bells Fifths, Operator
+Bells Leslie, Operator
+Bells Plain Octaves, Operator
+Bells Tinkle Fine, Operator
+Bells Tinkle Rich, Operator
+Glockenspiel Tremolo, Operator
+Kalimba Plastic, Operator
+Marimba Long, Operator
+Marimba Wood, Operator
+Tubular Bells, Operator
+Vibes Pure, Operator
+Bells & Thin Pad, Operator
+Detuned Broad Pad, Operator
+Detuned Sustain Pad, Operator
+Dynamic Inharmonics, Operator
+Grow & Shine, Operator
+High & Low, Operator
+Resonant Pad, Operator
+FM Glide Lead, Operator
+FM Harpsichord Lead, Operator
+LoFi Sines Lead, Operator
+Major 3rd Lead, Operator
+Minor 7th Chord Lead, Operator
+Sax Lead, Operator
+Sine Vibrato Lead, Operator
+Square Glide Lead, Operator
+Choir Reverb, Operator
+Choir Steam, Operator
+Portamento Female Pure, Operator
+Portamento Male, Operator
+Solo Female Long Rel, Operator
+Solo Female Reso, Operator
+Solo Male Fast Attack, Operator
+12 String Guitar, Operator
+FM Koto, Operator
+FM Sitar, Operator
+Harp Plastic, Operator
+Kototar, Operator
+Power Chords Guitar, Operator
+Suitar Guitar, Operator
+Bright Brass, Operator
+Plain & Simple Brass, Operator
+Slight Vibrato Brass, Operator
+Soft 5ths Brass, Operator
+Soft Warm Brass, Operator
+Flute Basic, Operator
+Flute Double, Operator
+Flute Hard, Operator
+Flute Mellow, Operator
+Ocarina Basic, Operator
+Pan Flute Basic, Operator
