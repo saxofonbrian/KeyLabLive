@@ -1,7 +1,7 @@
 # KeyLabLive
 
-An Ableton Live control surface script for the Arturia KeyLab mk3, built for
-playing live rather than for producing.
+An Ableton Live control surface script (MIDI remote script) for the Arturia
+KeyLab 61 and 88 mk3, built for playing live rather than for producing.
 
 Up to eight instrument tracks sharing one preset list on the keyboard's screen,
 your Arrangement locators as a song list, and no Max for Live anywhere.
