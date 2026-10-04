@@ -1371,6 +1371,11 @@ class KeyLabLive(ControlSurface):
             track.track.arm = True
         except (AttributeError, RuntimeError):
             pass
+        if cfg.SELECT_TRACK_ON_OPEN:
+            try:
+                self.song().view.selected_track = track.track
+            except (AttributeError, RuntimeError):
+                pass
 
         self._chapter = self._opening_chapter(track)
         rows = self._rows_now()
