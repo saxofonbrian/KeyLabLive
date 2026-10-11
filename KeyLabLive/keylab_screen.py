@@ -52,7 +52,7 @@ DAW_DISCONNECT = SYSEX_HEADER + (0x00, 0x02, 0x05, 0x00) + SYSEX_FOOTER
 #
 # There is a second family, 00 01 04, which is Analog Lab's own (it works in
 # Arturia mode without Analog Lab running). It has its own 7-line list widget
-# too, but the 0x28+0x15 list below, in THIS family, already gives 7 full
+# too, but the 0x14+0x15 list below, in THIS family, already gives 7 full
 # lines without costing the top button row, so there is no reason to leave
 # this family for the list.
 LED_FAMILY = (0x00, 0x02, 0x03)
@@ -196,12 +196,18 @@ POPUP_LAYOUT = 0x1E     # software-controllable
 # anchored on the 4th (0-indexed 3). See list_top and list_cursor_packet.
 LIST_VISIBLE_LINES = 7
 LIST_ANCHOR = 3
-LIST_TITLE = 0x28       # sets the title AND the list length
+LIST_TITLE = 0x14       # sets the title AND the list length; one wide column, no icons
 LIST_APPEND = 0x15      # push a line in at the bottom
 LIST_PREPEND = 0x16     # push a line in at the top
 
-# Sending a 0x28 title packet with no lines after it RESETS the list. There is
-# no "close list" command; this is the closest thing to one.
+# Sending a title packet with no lines after it RESETS the list. There is no
+# "close list" command; this is the closest thing to one.
+#
+# Title 0x14 gives one column across the whole screen, as Analog Lab's GENRES
+# list does. Title 0x28 gives two columns with an icon panel on the right, and
+# then every line needs the icon field "00 01 <id>" - without it the keyboard
+# stops sending MIDI for ~60 ms at a time whenever a popup is drawn over the
+# list.
 
 
 # ===== Text ===================================================================
@@ -323,7 +329,7 @@ def list_item_packet(control_byte, text, index):
     One line. control_byte is LIST_APPEND or LIST_PREPEND. index is the
     line's own position in the whole list, counted from 0.
 
-    This is the 0x28+0x15 list, in the 00 02 04 family - the same one the
+    This is the 0x14+0x15 list, in the 00 02 04 family - the same one the
     footer, popup and fader packets use.
     """
     hi, lo = _len_bytes(index)
