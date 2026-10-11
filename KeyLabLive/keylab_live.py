@@ -267,10 +267,9 @@ class _Fader(object):
 
     Both the volume and the screen are updated for every incoming value, with
     no throttle. A readout that does not appear is the capacitive touch sensor,
-    not the update rate. The accepted trade is that a fast fader move
-    during fast playing on the same track gives a very slight MIDI timing
-    hiccup - it is the sysex traffic itself, not its frequency, and it is worth
-    the feedback. Do not try to tune it away.
+    not the update rate. The MIDI timing stays steady because the list is
+    drawn with title 0x14 (see keylab_screen.LIST_TITLE): with 0x28 and no icon
+    field on the items, every changing readout stalls the keyboard's MIDI.
     """
 
     def __init__(self, surface, index, track):
