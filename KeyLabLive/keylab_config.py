@@ -192,8 +192,10 @@ REPERTOIRE_TITLE = "Repertoire"
 # not exactly on it. Without the lead, a backing track occasionally lets a very
 # short piece of the following song through before the transport halts.
 #
-# 200 ms is a chosen value, not a measured one. Raise it if you still hear a
-# fragment; lower it if songs feel clipped at the end.
+# 200 ms is a chosen value, not a measured one. The position is checked about
+# ten times a second, so the transport actually stops 100-200 ms early, and
+# less if Live is busy. Raise it if you still hear a fragment; lower it if
+# songs feel clipped at the end.
 STOP_LEAD_MS = 200
 
 

@@ -65,6 +65,11 @@ KeyLabLive/              the script — this folder goes into Remote Scripts
   keylab_screen.py       the keyboard's protocol — do not edit
   presets.txt            rebuilt from your Collection on every Cycle
   presets-manual.txt     your own list — the script never writes to it
+extras/
+  fakelive/              run and test the script without Live or the keyboard
+  aaCQ20B/               a bridge to an Allen & Heath CQ20B mixer, for builders
+MANIFESTO.md             how the rig behind this is built, and what it taught
+AGENTS.md                the same, condensed for AI coding assistants
 LICENSE                  MIT — use it, change it, pass it on
 ```
 
@@ -223,28 +228,52 @@ instruments, Instrument Racks, Sounds, Packs and plugin presets.
 
 ### The line format
 
-One line per preset, in both files:
+One line per preset, in both files: the preset's name in Live's browser, then
+optionally a comma and a chapter. Leave the name alone — it is how the preset is
+found. The chapter is yours.
+
+### How the two files become one list
+
+An example. Two files, as they might stand after a few weeks:
 
 ```
-Grand Piano, Racks
-E-Piano Roads, Racks
-Wurli Classic Piano, Electric
-Bloom Pad
+presets-manual.txt                 presets.txt
+------------------                 -----------
+Grand Piano, Racks                 Wurli Classic Piano, Electric
+E-Piano Roads, Racks               E-Piano Roads
+Bloom Pad                          Warm Pad, Pads
+
+                                   #~ Saw Lead, Leads
 ```
 
-The first field is the preset's name in Live's browser. Leave it alone — it is
-how the preset is found. The second is the chapter, and it is yours. A line
-with no comma is simply a preset with no chapter. Chapters are shared between
-the two files: `Racks` in one and `Racks` in the other is one chapter.
+What the screen shows, one chapter at a time (Tap and Metro step between them):
 
-Reorder the lines and the order sticks. Presets newly tagged land at the end
-with no chapter, so the order you know never shuffles under your fingers. **A preset appears
-at most once per chapter.** In both files under the same chapter, it is shown
-once, from the manual file — that is the one you edited on purpose, so it
-decides the place. Under different chapters, it is shown in each — a tagged
-preset with no chapter of its own stays in "Collection" even when the manual
-list also has it. With no chapters at all the list is flat, and a preset is
-shown once.
+```
+< Racks 1/5 >        Grand Piano, E-Piano Roads
+< Other 2/5 >        Bloom Pad
+< Electric 3/5 >     Wurli Classic Piano
+< Collection 4/5 >   E-Piano Roads
+< Pads 5/5 >         Warm Pad
+```
+
+The rules that produce it:
+
+- **The manual file comes first**, then `presets.txt`.
+- **Chapters appear in the order they first appear**, reading both files in
+  that order. Reorder the lines and the order sticks.
+- **A preset with no chapter goes into a chapter named after its file**:
+  `Other` for a hand-written line, `Collection` for a tagged one.
+- **A preset appears at most once per chapter.** `E-Piano Roads` is in both
+  files under different chapters — `Racks` in the manual file, `Collection` in
+  `presets.txt`, where it has no chapter of its own — so it is shown in each. In both files under the same chapter
+  it would be shown once, from the manual file.
+- **A `#~` line is not on the list.** It is a preset you tagged once and have
+  untagged since — see below.
+- **With no chapters anywhere**, there are no chapters at all: one flat list,
+  and a preset is shown once.
+
+Presets newly tagged land at the end of `presets.txt` with no chapter, so the
+order you know never shuffles under your fingers.
 
 ### Untagging does not throw your work away
 
@@ -252,7 +281,9 @@ The line moves to a block at the bottom of `presets.txt` marked `#~`:
 
 ```
 # ---------------------------------------------------------------
-# Remembered: tagged once, not tagged now.
+# Remembered: tagged once, not tagged now. These are not in the
+# list. Tag one again and it returns above with its chapter. Delete
+# a line to forget it for good.
 # ---------------------------------------------------------------
 #~ E-Piano Roads, Racks
 ```
@@ -474,8 +505,9 @@ playing. If Cycle feels slow, cut the setting down or empty it.
 
 **When playback stops** — `STOP_LEAD_MS`, default 200. Playback halts that far
 *before* the next locator, because stopping exactly on it occasionally lets a
-fragment of the next song through. Raise it if you still hear one; lower it if
-songs feel clipped.
+fragment of the next song through. The position is checked about ten times a
+second, so the real lead is 100-200 ms, and less if Live is busy. Raise it if
+you still hear a fragment; lower it if songs feel clipped.
 
 **How long a hold takes** — `LONG_PRESS_SECONDS`, default 0.4.
 
@@ -486,6 +518,25 @@ track in Live, so the computer screen shows the track you are choosing for. Set
 **Colours** — all of them, as `(red, green, blue)` with each 0-127. Note that
 is not 0-255. No "off" state is fully dark: a button you cannot find on a dark
 stage is worse than one showing the wrong state.
+
+---
+
+## Changing the code
+
+`extras/fakelive` runs the script against a fake Live, with a fake clock and a
+decoder that turns what the script sends the keyboard back into a picture of the
+screen. No Live, no keyboard, nothing to install:
+
+```
+cd extras/fakelive
+python3 test_keylablive.py
+```
+
+It presses the buttons, turns the wheel and moves the faders, and checks the
+result: arming, preset lists, chapters, loading, the song list, the stop before
+the next locator, fader readouts and Cycle. Run it after every change, before
+trying it on the keyboard. A failed check prints the screen as it stood. Its
+README shows how to drive it yourself.
 
 ---
 
