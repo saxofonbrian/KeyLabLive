@@ -173,6 +173,12 @@ CHAPTER_TAGGED = "Collection"
 CHAPTER_UNNAMED = "Other"
 
 
+# Opening a track's preset list also selects that track in Live, so the
+# computer screen shows the track you are picking a preset for. Set False to
+# leave Live's selection alone until a preset is actually loaded.
+SELECT_TRACK_ON_OPEN = True
+
+
 # -----------------------------------------------------------------------------
 # REPERTOIRE (the song list)
 # -----------------------------------------------------------------------------

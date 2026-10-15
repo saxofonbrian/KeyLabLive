@@ -1215,10 +1215,11 @@ class KeyLabLive(ControlSurface):
         Read both lists and join them into the one list on screen: the manual
         file first, then the tagged one.
 
-        A preset in both files is shown once, from the manual file - that file
-        is the one a person edited on purpose, so it decides the chapter and
-        the place. Chapters are matched by name across the two, so the same
-        chapter name in both is one chapter.
+        A preset appears at most once per chapter. In both files under the same
+        chapter it is shown once, from the manual file - that file is the one a
+        person edited on purpose, so it decides the place. Under different
+        chapters it is shown in each. Chapters are matched by name across the
+        two, so the same chapter name in both is one chapter.
 
         A preset with no chapter of its own takes the one named after its file,
         so the title on screen says where it came from. That only happens if
@@ -1234,10 +1235,11 @@ class KeyLabLive(ControlSurface):
             tagged = [(preset, chapter or cfg.CHAPTER_TAGGED)
                       for preset, chapter in tagged]
 
-        seen = set(preset_key(preset) for preset, _chapter in self._manual)
+        seen = set((preset_key(preset), chapter)
+                   for preset, chapter in self._manual)
         self.entries = list(self._manual)
         for preset, chapter in tagged:
-            key = preset_key(preset)
+            key = (preset_key(preset), chapter)
             if key not in seen:
                 seen.add(key)
                 self.entries.append((preset, chapter))
@@ -1370,6 +1372,11 @@ class KeyLabLive(ControlSurface):
             track.track.arm = True
         except (AttributeError, RuntimeError):
             pass
+        if cfg.SELECT_TRACK_ON_OPEN:
+            try:
+                self.song().view.selected_track = track.track
+            except (AttributeError, RuntimeError):
+                pass
 
         self._chapter = self._opening_chapter(track)
         rows = self._rows_now()

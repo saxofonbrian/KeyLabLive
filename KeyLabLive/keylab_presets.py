@@ -123,7 +123,8 @@ def preset_key(name):
     """
     A preset name reduced to what the index compares: case, surrounding space
     and the file extension folded away. Two names with the same key are the
-    same preset, which is how the two lists are joined without duplicates.
+    same preset, which is how the two lists are joined without duplicates
+    inside a chapter.
     """
     return _norm(name)
 

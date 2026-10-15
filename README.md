@@ -234,9 +234,13 @@ with no comma is simply a preset with no chapter. Chapters are shared between
 the two files: `Racks` in one and `Racks` in the other is one chapter.
 
 Reorder the lines and the order sticks. Presets newly tagged land at the end
-with no chapter, so the order you know never shuffles under your fingers. **A preset in
-both files is shown once**, from the manual file — that is the one you edited
-on purpose, so it decides the chapter and the place.
+with no chapter, so the order you know never shuffles under your fingers. **A preset appears
+at most once per chapter.** In both files under the same chapter, it is shown
+once, from the manual file — that is the one you edited on purpose, so it
+decides the place. Under different chapters, it is shown in each — a tagged
+preset with no chapter of its own stays in "Collection" even when the manual
+list also has it. With no chapters at all the list is flat, and a preset is
+shown once.
 
 ### Untagging does not throw your work away
 
@@ -470,6 +474,10 @@ fragment of the next song through. Raise it if you still hear one; lower it if
 songs feel clipped.
 
 **How long a hold takes** — `LONG_PRESS_SECONDS`, default 0.4.
+
+**Live's selected track** — opening a track's preset list also selects that
+track in Live, so the computer screen shows the track you are choosing for. Set
+`SELECT_TRACK_ON_OPEN = False` to leave Live's selection alone.
 
 **Colours** — all of them, as `(red, green, blue)` with each 0-127. Note that
 is not 0-255. No "off" state is fully dark: a button you cannot find on a dark
