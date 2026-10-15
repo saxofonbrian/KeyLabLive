@@ -6,6 +6,9 @@ KeyLab 61 and 88 mk3, built for playing live rather than for producing.
 Up to eight instrument tracks sharing one preset list on the keyboard's screen,
 your Arrangement locators as a song list, and no Max for Live anywhere.
 
+Why it works the way it does, and what building it taught about Live and the
+KeyLab, is in **[MANIFESTO.md](MANIFESTO.md)**.
+
 - **The screen buttons** arm and un-arm your tracks — always, including while a
   preset list is open. Tracks 1-4 are on buttons 1-4, tracks 5-8 on buttons
   5-8. The label is the track's name — or, once you have chosen one, the preset
