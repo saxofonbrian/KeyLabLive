@@ -400,6 +400,9 @@ the address changes; while a fader moves, CC6 and CC38 are enough, which halves
 the traffic. At startup the script asks for the current values, so the pads and
 readouts match the mixer before anything is touched.
 
+The bridge script and the address tables are in
+**[extras/aaCQ20B](extras/aaCQ20B)**.
+
 ---
 
 The code and this text were written with Claude, Anthropic's AI model, from my
