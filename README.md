@@ -7,7 +7,8 @@ Up to eight instrument tracks sharing one preset list on the keyboard's screen,
 your Arrangement locators as a song list, and no Max for Live anywhere.
 
 Why it works the way it does, and what building it taught about Live and the
-KeyLab, is in **[MANIFESTO.md](MANIFESTO.md)**.
+KeyLab, is in **[MANIFESTO.md](MANIFESTO.md)**. Working with an AI assistant?
+Point it at **[AGENTS.md](AGENTS.md)**.
 
 - **The screen buttons** arm and un-arm your tracks — always, including while a
   preset list is open. Tracks 1-4 are on buttons 1-4, tracks 5-8 on buttons
