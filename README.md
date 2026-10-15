@@ -6,6 +6,15 @@ KeyLab 61 and 88 mk3, built for playing live rather than for producing.
 Up to eight instrument tracks sharing one preset list on the keyboard's screen,
 your Arrangement locators as a song list, and no Max for Live anywhere.
 
+<p>
+  <img src="docs/song-list.jpg" width="49%" alt="KeyLab 88 mk3 with KeyLabLive: the song list on screen, track names on the screen buttons, transport buttons lit">
+  <img src="docs/preset-list.jpg" width="49%" alt="A preset list open on the KeyLab screen: chapter title Electric 2/6, the track's button lit yellow">
+</p>
+
+*Left: the song list, with a track on each screen button. Right: a track's
+preset list, open on the chapter "Electric" — its button turns yellow while the
+list is on screen.*
+
 Why it works the way it does, and what building it taught about Live and the
 KeyLab, is in **[MANIFESTO.md](MANIFESTO.md)**. Working with an AI assistant?
 Point it at **[AGENTS.md](AGENTS.md)**.
