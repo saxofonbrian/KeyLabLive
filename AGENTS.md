@@ -19,6 +19,7 @@ Humans: the same facts, explained, are in README.md and MANIFESTO.md.
 | User settings | `KeyLabLive/keylab_config.py` (imports nothing) |
 | Live API behaviour found the hard way | MANIFESTO.md, section "Live's Python API" |
 | Allen & Heath CQ20B over NRPN | `extras/aaCQ20B/` |
+| Running a script without Live or hardware | `extras/fakelive/` |
 | Design rules for the stage | MANIFESTO.md, "What it is meant to do" |
 
 If this file and the code disagree, the code was tested on hardware; trust it
@@ -150,22 +151,17 @@ and fix this file.
 
 ## Testing without Live
 
-The author's own work uses a fake Live; it is not published, but it is small to
-rebuild:
+`extras/fakelive/` is a fake Live: stand-ins for `Live` and `_Framework`, an
+observable object model, a fake clock replacing `threading.Timer` and `time`,
+and a decoder that renders the SysEx sent to the KeyLab as text.
 
-1. Stub modules on `sys.path` named `Live` and `_Framework` (`ControlSurface`
-   with `_send_midi`, `schedule_message`, `log_message`, `song()`,
-   `application()`; `ButtonElement` that lets the test inject values).
-2. A model of `Song`, `Track`, `Device`, `Parameter`, `CuePoint`, `Browser`
-   where every observable property gets `add_/remove_<name>_listener`
-   automatically. Record every attribute the script asks for that the model
-   lacks; scripts often swallow `AttributeError`, which would hide gaps.
-3. Replace `threading.Timer` and `time` with a fake clock, and call
-   `update_display()` every simulated 100 ms.
-4. Copy the script folder to a temp directory before running, so files the
-   script writes do not touch the real ones.
-5. Decode outgoing SysEx back into a text rendering of the screen, and assert on
-   that.
+```
+cd extras/fakelive && python3 test_keylablive.py
+```
+
+Run it after every change, before asking for a test on hardware. When adding a
+feature, add a check to `test_keylablive.py`. When `rig.errors()` reports a
+missing attribute, add it to `model.py` with the behaviour Live has.
 
 ---
 
